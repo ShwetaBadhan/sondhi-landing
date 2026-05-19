@@ -135,7 +135,7 @@ function Hero() {
 
       <motion.div
         style={{ opacity: fade }}
-        className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 pb-20 pt-40"
+        className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-between px-6 pb-16 pt-28 md:pt-32"
       >
         {/* Top eyebrow */}
         <motion.div
@@ -152,7 +152,7 @@ function Hero() {
         </motion.div>
 
         {/* Headline */}
-        <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:items-end">
+        <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <h1 className="font-display text-[clamp(3.5rem,11vw,11rem)] leading-[0.88] tracking-tight text-ink">
               <Stagger>
@@ -359,12 +359,13 @@ function Fares() {
       body: "Direct airline rates with no GDS markup. Save on every issuance.",
       icon: Ticket,
       span: "lg:col-span-2 lg:row-span-2",
-      tone: "bg-ink text-paper",
+      image: heroImg,
+      dark: true,
     },
-    { title: "V & K exclusive", body: "Exclusive low-fare buckets unavailable elsewhere.", icon: Sparkles, tone: "bg-paper-warm" },
-    { title: "Wider inventory", body: "Deeper seat availability on the dates that matter.", icon: Plane, tone: "bg-paper-warm" },
-    { title: "Mixed RBD fares", body: "Combine RBDs for the lowest legal price.", icon: Globe2, tone: "bg-amber/40" },
-    { title: "Tour-based fares", body: "Negotiated group rates without the paperwork.", icon: Luggage, tone: "bg-paper-warm" },
+    { title: "V & K exclusive", body: "Exclusive low-fare buckets unavailable elsewhere.", icon: Sparkles, image: cloudsImg, dark: true },
+    { title: "Wider inventory", body: "Deeper seat availability on the dates that matter.", icon: Plane, image: cabinImg, dark: true },
+    { title: "Mixed RBD fares", body: "Combine RBDs for the lowest legal price.", icon: Globe2, image: studentImg, dark: true },
+    { title: "Tour-based fares", body: "Negotiated group rates without the paperwork.", icon: Luggage, image: cloudsImg, dark: true },
   ];
   return (
     <section id="fares" className="relative px-6 py-28">
@@ -377,7 +378,7 @@ function Fares() {
             </>
           }
         />
-        <div className="mt-16 grid auto-rows-[200px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c, i) => (
             <motion.div
               key={i}
@@ -385,12 +386,20 @@ function Fares() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className={`hover-lift relative flex flex-col justify-between overflow-hidden rounded-3xl p-7 ${c.tone} ${c.span ?? ""}`}
+              className={`hover-lift group relative flex flex-col justify-between overflow-hidden rounded-3xl p-7 text-paper ${c.span ?? ""}`}
             >
-              <c.icon className="h-6 w-6 opacity-80" />
-              <div>
+              <img
+                src={c.image}
+                alt=""
+                aria-hidden
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10" />
+              <c.icon className="relative h-6 w-6 opacity-90" />
+              <div className="relative">
                 <h3 className="font-display text-3xl leading-tight">{c.title}</h3>
-                <p className="mt-2 text-sm opacity-80">{c.body}</p>
+                <p className="mt-2 text-sm text-paper/80">{c.body}</p>
               </div>
             </motion.div>
           ))}
@@ -523,9 +532,9 @@ function HorizontalRoutes() {
   ];
 
   return (
-    <section ref={ref} className="relative h-[300vh] bg-ink text-paper">
-      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
-        <div className="mx-auto flex w-full max-w-7xl items-end justify-between px-6 pt-32">
+    <section ref={ref} className="relative h-[230vh] bg-ink text-paper">
+      <div className="sticky top-0 flex h-screen flex-col overflow-hidden pb-12">
+        <div className="mx-auto flex w-full max-w-7xl items-end justify-between px-6 pt-24">
           <div>
             <span className="font-mono text-[11px] uppercase tracking-widest text-paper/50">
               03 · Network
