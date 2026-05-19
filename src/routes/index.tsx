@@ -71,12 +71,13 @@ function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-2 pl-3">
-          <div className="grid h-8 w-8 place-items-center rounded-full bg-gradient-ink text-paper">
+          {/* <div className="grid h-8 w-8 place-items-center rounded-full bg-gradient-ink text-paper">
             <Plane className="h-4 w-4 -rotate-45" />
           </div>
           <span className="font-display text-2xl leading-none text-ink">
             NDC<span className="italic text-cobalt">only</span>
-          </span>
+          </span> */}
+          <img src="/src/assets/new-project-8.png" alt="" className="w-45" />
         </a>
         <nav className="hidden items-center gap-8 text-sm text-ink-soft md:flex">
           {[
@@ -122,7 +123,7 @@ function Hero() {
     <section id="top" ref={ref} className="relative isolate min-h-screen overflow-hidden">
       {/* aurora bg */}
       <div className="absolute inset-0 bg-gradient-aurora opacity-70" />
-      <motion.div style={{ y, scale }} className="absolute inset-x-0 bottom-0 h-[80%]">
+      <motion.div style={{ y, scale }} className="absolute inset-x-0 bottom-0">
         <img
           src={heroImg}
           alt="Aircraft wing above clouds at golden hour"
@@ -532,7 +533,7 @@ function HorizontalRoutes() {
   ];
 
   return (
-    <section ref={ref} className="relative h-[230vh] bg-ink text-paper">
+    <section ref={ref} className="relative bg-ink text-paper">
       <div className="sticky top-0 flex h-screen flex-col overflow-hidden pb-12">
         <div className="mx-auto flex w-full max-w-7xl items-end justify-between px-6 pt-24">
           <div>
