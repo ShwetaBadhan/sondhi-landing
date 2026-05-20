@@ -15,6 +15,7 @@ import {
   Globe2,
   ChevronDown,
 } from "lucide-react";
+import logo from "@/assets/new-project-8.png";
 import heroImg from "@/assets/banner.png";
 import cabinImg from "@/assets/cabin-premium.jpg";
 import cloudsImg from "@/assets/clouds.jpg";
@@ -77,7 +78,7 @@ function Nav() {
           <span className="font-display text-2xl leading-none text-ink">
             NDC<span className="italic text-cobalt">only</span>
           </span> */}
-          <img src="/src/assets/new-project-8.png" alt="" className="w-45" />
+          <img src={logo} alt="logo" className="w-45"/>
         </a>
         <nav className="hidden items-center gap-8 text-sm text-ink-soft md:flex">
           {[
