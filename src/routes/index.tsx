@@ -15,7 +15,7 @@ import {
   Globe2,
   ChevronDown,
 } from "lucide-react";
-import heroImg from "@/assets/hero-aircraft.jpg";
+import heroImg from "@/assets/banner.png";
 import cabinImg from "@/assets/cabin-premium.jpg";
 import cloudsImg from "@/assets/clouds.jpg";
 import studentImg from "@/assets/student.jpg";
